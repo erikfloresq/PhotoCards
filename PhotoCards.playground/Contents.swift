@@ -30,13 +30,23 @@ struct PhotoCards: View {
     var body: some View {
         ZStack {
             PhotoCard(imageName: "isa.jpg")
-                .offset(x: expand ? -110 : 0, y: 0)
+                .offset(x: expand ? -325 : -120, y: expand ? -90 : 0)
+                .rotationEffect(.degrees(expand ? -30 : 0))
+            PhotoCard(imageName: "yoon.jpg")
+                .offset(x: expand ? -210 : -120, y: expand ? -50 : 0)
                 .rotationEffect(.degrees(expand ? -20 : 0))
+            PhotoCard(imageName: "seeun.jpg")
+                .offset(x: -120, y: 0)
+                .rotationEffect(.degrees(0))
             PhotoCard(imageName: "sieun.jpg")
-                .offset(x: 0, y: expand ? 10 : 0)
+                .offset(x: expand ? -20 : -120, y: expand ? 10 : 0)
+                .rotationEffect(.degrees(expand ? 10 : 0))
+            PhotoCard(imageName: "sumin.jpg")
+                .offset(x: expand ? 95 : -120, y: expand ? 10 : 0)
+                .rotationEffect(.degrees(expand ? 25 : 0))
             PhotoCard(imageName: "j.jpg")
-                .offset(x: expand ? 110 : 0, y: 0)
-                .rotationEffect(.degrees(expand ? 20 : 0))
+                .offset(x: expand ? 190 : -120, y: expand ? -10 : 0)
+                .rotationEffect(.degrees(expand ? 40 : 0))
         }
         .onTapGesture {
             withAnimation(.spring()) {
@@ -51,7 +61,7 @@ struct Canvas: View {
         ZStack {
             Rectangle()
                 .foregroundColor(.white)
-                .frame(width: 900, height: 500, alignment: .center)
+                .frame(width: 800, height: 500, alignment: .center)
             PhotoCards()
         }
     }
